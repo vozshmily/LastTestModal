@@ -1,0 +1,15 @@
+﻿@model IEnumerable<LastTestModal.Models.TransactionModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a onclick="showInPopup('@Url.Action("AddorEdit","Transaction",null,Context.Request.Scheme)','New Transaction')">AddorEdit</a>
+</p>
+
+<div id="view-all">
+    @await Html.PartialAsync("_ViewAll",Model)
+</div>
